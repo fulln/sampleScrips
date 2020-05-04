@@ -1,0 +1,2 @@
+# sampleScrips
+目前搜罗到的一些简单有效的py脚本orgolang再实现版本
