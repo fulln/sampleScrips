@@ -52,14 +52,14 @@ def get_detail(url):
         informationlist[tr.div.string] = tr.p.string
     return informationlist    
 
-
 links = get_head_link(url)
+# load = []
 for filename in links:
+    # load.append(filename.replace("/",""))
     all_pages = []
     all_context = {}
     all_pages.extend(get_page_link(links[filename]))
     for page in all_pages:
-        print(page)
         all_context.update(get_detail(page))
     download_file(filename,all_context)
 
