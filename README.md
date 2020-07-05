@@ -13,10 +13,14 @@
 
 1. 加载workflow,从<a>https://github.com/fulln/sampleScrips/releases/tag</a> 上下载最新的版本
 2. 打开alfred搜索栏
-3. 输入`moji` + 你想要搜的颜文字分类（注意打拼音),你输入其他的是没有办法找到对应的
+3. 输入`moji` + 你想要搜的颜文字分类（注意打拼音)
+  3.1 如果你输入的是少于2个字符的情况，目录会自动展示，但是还是需要你手动输入下目录的前面几个拼音
+  3.2 如果输入的时候是“-”开头 ，则意味着从所有已存在的颜文字中查询对应有中文意思的颜文字
+  3.3 如果输入的时候 只输入“-” 则会展示所有的颜文字（大小36K）
 
 > 目前收录的分类有
-> 'changyong', 'gaoxing', 'maimeng', 'zhenjing', 'shengqi', 'wunai', 'yun', 'daoqian', 'dongwu', 'haixiu', 'ku', 'memeda', 'shuila', 'zaijian', 'aojiao', 'chihuo', 'deyi', 'haipa', 'jiong', 'zan', 'nanguo', 'jian', 'qita'
+> 'kaixin', 'daoqian', 'teshu', 'jieri', 'meishi', 'liuyanlei', 'haipa', 'shangxin', 'dazhaohu', 'thangzhou', 'haixiu', 'yun', 'biaoqing', 'mofa', 'keai', 'tanshou', 'hua', 'xingxing', 'changyong', 'zan', 'liulei', 'xiazhuozi', 'ku', 'dalian', 'zhenjing', 'chouyan', 'ganbei', 'jian', 'bingchang', 'shuijue', 'benpao', 'test.py', 'chihuo', 'memeda', 'aixin', 'xiaozhu', 'yiwen', 'xiezi', 'gouxiong', 'liukoushui', 'niao', 'wunai', 'miaozhao', 'jiayou', 'jingli', 'dongwu', 'xinqing', 'duocang', 'zhaoshou', 'shengqi', 'wuqi', 'miaomai', 'pengyou', 'yu', 'nvhai', 'deyi', 'dongzuo', 'huaiyi', 'shuila', 'jingya', 'zaijian', 'aojiao', 'qita', 'tianqi', 'tiaowu', 'yinle', 'daothang', 'gou', 'yundong', 'jiong', 'maimeng', 'sikao', 'nanguo', 'ganga', 'gaoxing', 'laonianren', 'qinwen'
+
 
 4. 找到你想要的颜文字，并按enter
 
