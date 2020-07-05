@@ -7,4 +7,17 @@
 
 ## Alfred_ywz
 
-[Alfred_ywz](./Alfred_ywz)  一个颜文字的工作流，之前的颜文字流竟然不能使用了,于是简单的写了一个,目前的都是从网页爬下来的文字
+[Alfred_ywz](./Alfred_ywz)  一个颜文字的工作流，之前的颜文字流竟然不能使用了,于是简单的写了一个,目前收录的只有<a>http://www.yanwenzi.com/</a>中的相关分类（其实就是从这个网站上爬下来的）
+
+**ywz使用方式**
+
+1. 加载workflow,从<a>https://github.com/fulln/sampleScrips/releases/tag</a> 上下载最新的版本
+2. 打开alfred搜索栏
+3. 输入`moji` + 你想要搜的颜文字分类（注意打拼音),你输入其他的是没有办法找到对应的
+
+> 目前收录的分类有
+> 'changyong', 'gaoxing', 'maimeng', 'zhenjing', 'shengqi', 'wunai', 'yun', 'daoqian', 'dongwu', 'haixiu', 'ku', 'memeda', 'shuila', 'zaijian', 'aojiao', 'chihuo', 'deyi', 'haipa', 'jiong', 'zan', 'nanguo', 'jian', 'qita'
+
+4. 找到你想要的颜文字，并按enter
+
+
