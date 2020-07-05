@@ -13,7 +13,7 @@ def read_file(json_filename):
 
 def get_json(query):
     # parentPath = os.path.dirname(__file__)
-    filename ="../a/"+query+".json"
+    filename ="./a/"+query+".json"
     return read_file(filename)
 
 def get_menu():
@@ -34,13 +34,13 @@ def get_all(args):
     for key in totals.keys():
         if args is None:
             seedback[key]=totals[key]
-            if len(seedback) >20:
+            if len(seedback) >20
                 return seedback
             else:
                 continue    
         if args in key:
             seedback[key]=totals[key]
-            
+
     return seedback        
     
 
@@ -51,8 +51,9 @@ def main(wf):
     if arg is None:
         flag = False
         data = get_menu()
-    elif args.startswith("-"):
-        data = get_all(args)   
+    elif arg.startswith("-"):
+        data = get_all(arg)   
+        flag = True
     else:
         flag = True
         data = get_json(arg)    

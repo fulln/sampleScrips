@@ -33,15 +33,17 @@ def get_json(query):
     # parentPath = os.path.dirname(__file__)
     return read_file(query)
 
+dirname=[]
 
-for dirpath,dirnames,filenames in os.walk(path):
+for dirpath,dirnames,filenames in os.walk(path+"/a/"):
     for filename in filenames:
-        if filename.endswith(".json") :
-            if ord(filename[:1]) < 65:
-                continue
-            smalljson =  get_json(dirpath+'/'+filename)
-            for key,value in smalljson.items():    
-                    cachefile.update(get_json(dirpath+'/'+filename))
-    write_file("all.json",cachefile)        
+        dirname.append(filename.replace(".json",""))    
+    #     if filename.endswith(".json") :
+    #         if ord(filename[:1]) < 65:
+    #             continue
+    #         smalljson =  get_json(dirpath+'/'+filename)
+    #         for key,value in smalljson.items():    
+    #                 cachefile.update(get_json(dirpath+'/'+filename))
+    # write_file("all.json",cachefile)        
             
-
+print(dirname)
