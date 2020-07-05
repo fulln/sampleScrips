@@ -13,7 +13,7 @@ def read_file(json_filename):
 
 def get_json(query):
     # parentPath = os.path.dirname(__file__)
-    filename ="./"+query+".json"
+    filename ="../a/"+query+".json"
     return read_file(filename)
 
 def get_menu():
@@ -26,13 +26,34 @@ def get_menu():
     #     json[key] =key
     return json
 
+def get_all(args):
+    args = args.replace("-","")
+    filename = "./all.json"
+    totals = read_file(filename)
+    seedback= {}
+    for key in totals.keys():
+        if args is None:
+            seedback[key]=totals[key]
+            if len(seedback) >20:
+                return seedback
+            else:
+                continue    
+        if args in key:
+            seedback[key]=totals[key]
+            
+    return seedback        
+    
+
+
 def main(wf):
     args = wf.args
     arg = switch(args[0])
     if arg is None:
         flag = False
         data = get_menu()
-    else:    
+    elif args.startswith("-"):
+        data = get_all(args)   
+    else:
         flag = True
         data = get_json(arg)    
     # data = wf.cached_data(args[0],get_json(arg), max_age=600)
@@ -42,11 +63,13 @@ def main(wf):
 
 def switch(arg):
     list = ['changyong', 'gaoxing', 'maimeng', 'zhenjing', 'shengqi', 'wunai', 'yun', 'daoqian', 'dongwu', 'haixiu', 'ku', 'memeda', 'shuila', 'zaijian', 'aojiao', 'chihuo', 'deyi', 'haipa', 'jiong', 'zan', 'nanguo', 'jian', 'qita']
+    if arg is not None and  arg.startswith("-"):
+        return arg
     if len(arg) > 1 :
         for key in list:
             if key.find(arg) != -1:
-                return key
-    return
+                return key            
+    return 
 
 if __name__ == '__main__':
 
