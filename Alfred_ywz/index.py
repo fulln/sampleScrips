@@ -18,9 +18,12 @@ def get_json(query):
 
 def get_menu():
     list = ['changyong', 'gaoxing', 'maimeng', 'zhenjing', 'shengqi', 'wunai', 'yun', 'daoqian', 'dongwu', 'haixiu', 'ku', 'memeda', 'shuila', 'zaijian', 'aojiao', 'chihuo', 'deyi', 'haipa', 'jiong', 'zan', 'nanguo', 'jian', 'qita']
+    list2 = ['常用', '高兴', '卖萌', '震惊', '生气', '无奈', '晕', '道歉', '动物', '害羞', '哭', '么么哒', '睡啦', '再见', '傲娇', '吃货', '得意', '害怕', '囧', '赞', '难过', '贱', '其他']
     json ={}
-    for key in list:
-        json[key] =key
+    for i in range(len(list)):
+        json[list[i]]=list2[i]
+    # for key in list:
+    #     json[key] =key
     return json
 
 def main(wf):
