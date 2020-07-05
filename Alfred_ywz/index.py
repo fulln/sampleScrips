@@ -16,15 +16,25 @@ def get_json(query):
     filename ="./"+query+".json"
     return read_file(filename)
 
+def get_menu():
+    list = ['changyong', 'gaoxing', 'maimeng', 'zhenjing', 'shengqi', 'wunai', 'yun', 'daoqian', 'dongwu', 'haixiu', 'ku', 'memeda', 'shuila', 'zaijian', 'aojiao', 'chihuo', 'deyi', 'haipa', 'jiong', 'zan', 'nanguo', 'jian', 'qita']
+    json ={}
+    for key in list:
+        json[key] =key
+    return json
+
 def main(wf):
     args = wf.args
     arg = switch(args[0])
     if arg is None:
-        return
-    data = get_json(arg)    
+        flag = False
+        data = get_menu()
+    else:    
+        flag = True
+        data = get_json(arg)    
     # data = wf.cached_data(args[0],get_json(arg), max_age=600)
     for key in data:
-        wf.add_item(data[key],key)    
+        wf.add_item(title=data[key],subtitle=key,arg=data[key],valid=flag)        
     wf.send_feedback()
 
 def switch(arg):
