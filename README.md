@@ -22,6 +22,6 @@
 > 'kaixin', 'daoqian', 'teshu', 'jieri', 'meishi', 'liuyanlei', 'haipa', 'shangxin', 'dazhaohu', 'thangzhou', 'haixiu', 'yun', 'biaoqing', 'mofa', 'keai', 'tanshou', 'hua', 'xingxing', 'changyong', 'zan', 'liulei', 'xiazhuozi', 'ku', 'dalian', 'zhenjing', 'chouyan', 'ganbei', 'jian', 'bingchang', 'shuijue', 'benpao', 'test.py', 'chihuo', 'memeda', 'aixin', 'xiaozhu', 'yiwen', 'xiezi', 'gouxiong', 'liukoushui', 'niao', 'wunai', 'miaozhao', 'jiayou', 'jingli', 'dongwu', 'xinqing', 'duocang', 'zhaoshou', 'shengqi', 'wuqi', 'miaomai', 'pengyou', 'yu', 'nvhai', 'deyi', 'dongzuo', 'huaiyi', 'shuila', 'jingya', 'zaijian', 'aojiao', 'qita', 'tianqi', 'tiaowu', 'yinle', 'daothang', 'gou', 'yundong', 'jiong', 'maimeng', 'sikao', 'nanguo', 'ganga', 'gaoxing', 'laonianren', 'qinwen'
 
 
-4. 找到你想要的颜文字，并按enter
+4. **找到你想要的颜文字，并按enter**  
 
 
