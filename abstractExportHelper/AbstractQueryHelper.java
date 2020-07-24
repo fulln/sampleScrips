@@ -40,7 +40,7 @@ public abstract class AbstractQueryHelper<T extends Serializable> {
 	/**
 	 * 当前查询的总条数
 	 */
-	private Integer totalCount;
+	private Integer totalCount = 0;
 	/**
 	 * 为查询做准备
 	 */
@@ -278,7 +278,7 @@ public abstract class AbstractQueryHelper<T extends Serializable> {
 					//判断要是达到了默认的size大小，就开始写入到excel里面
 					if (parallelList.size() > getDefaultExportListSize()) {
 						getExportDataListToExcelList(parallelList);
-						setTotalCount(parallelList.size());
+						setTotalCount(getTotalCount()+parallelList.size());
 						//清空
 						parallelList.clear();
 					}
