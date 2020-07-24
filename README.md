@@ -134,7 +134,7 @@ do {
 
 ### 使用步骤
 
-- 将[该文件](./AbstractQueryHelper/AbstractQueryHelper.java)放到你所在的工具类中
+- 将[该文件](./abstractExportHelper/AbstractQueryHelper.java)放到你所在的工具类中
 - 在需要使用到的地方
 
 ```java
