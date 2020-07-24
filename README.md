@@ -60,7 +60,9 @@
 * 实现简单
 </td>
 </tr>
-<tr><td  valign="top">
+<tr>
+<td>缺点</td>
+<td  valign="top">
 * 不能避免OOM
 * 数据容易被串改操作
 * 敏感数据容易被暴露
