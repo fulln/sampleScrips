@@ -47,37 +47,49 @@
 </tr>
 <tr>
 <td  valign="top">优点</td><td  valign="top">
+	
 * 在分布式服务中方便集中进行导出的处理
 * 实现异步的导出控制
+
 </td>
 <td  valign="top">
+	
 * 实现异步导出控制
 * io对服务器性能影响不大
 * 不占用原服务器的io
+
 </td>
 <td  valign="top">
+	
 * 维护方便
 * 实现简单
+
 </td>
 </tr>
 <tr>
 <td>缺点</td>
 <td  valign="top">
+	
 * 不能避免OOM
 * 数据容易被串改操作
 * 敏感数据容易被暴露
 * 大量数据容易对redis的造成负担
+
 </td>
 <td  valign="top">
+	
 * 对高性能服务器的一个浪费
 * 一般hadoop服务器由大数据维护,增加了对数据的维护
 * 同样有文件安全的问题
 * OOM的风险
+
 </td>
 <td  valign="top">
+	
 * 不能异步导出或者较难异步导出
 * 高IO对原服务器上其他服务接口造成影响
 * OOM
+
 </td>
 </tr>
 </table>
