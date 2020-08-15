@@ -2,6 +2,13 @@
 目前搜罗到的一些简单有效的py脚本orgolang再实现版本
 
 <!-- toc -->
+
+- [hlsVideoDownload](#hlsvideodownload)
+- [Alfred_ywz](#alfred_ywz)
+- [AbstractQueryHelper](#abstractqueryhelper)
+  * [使用步骤](#%E4%BD%BF%E7%94%A8%E6%AD%A5%E9%AA%A4)
+- [ssh登录脚本](#ssh%E7%99%BB%E5%BD%95%E8%84%9A%E6%9C%AC)
+
 <!-- tocstop -->
 
 ## hlsVideoDownload
