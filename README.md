@@ -25,6 +25,8 @@
 4. **找到你想要的颜文字，并按enter**  
 
 ## AbstractQueryHelper
+[AbstractQueryHelper](./AbstractQueryHelper)
+
 
 > 一个避免oom的导出下载帮助java类
 
@@ -156,7 +158,9 @@ do {
         abstractQueryHelper.getTotalCount();
 ```
 
+## ssh登录脚本
 
+采用了expect 脚本流程控制 ，用于多ip登录时查询对应ip的日志，免去了要手动输入完整ip 和 密码的烦恼，特别适用于容器服务器日志查询，如果需要其他操作可以自行加spawn
 
 
 
