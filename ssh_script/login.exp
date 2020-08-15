@@ -1,0 +1,17 @@
+#!/usr/bin/expect 
+set ipaddress [lindex $argv 0]
+set username [lindex $argv 1]
+set password [lindex $argv 2]
+set locations [lindex $argv 3]
+if { $argc != 4 } {
+puts "Usage: expect login.exp ipaddress username password"
+exit 1
+}
+set timeout 30
+spawn ssh $username@$ipaddress
+expect {
+        "(yes/no)" {send "yes\r"; exp_continue}
+        "password:" {send "$password\r"}
+}
+expect "$username@*"  {send "cd /app/applogs/$locations/\r"}
+interact
