@@ -19,8 +19,8 @@ else
 	   echo arg: $index = $arg
 	   if [ $index  == 1 ];
 	   then		   
-	   	  len=$arg|wc -L
-                  if [ ${len} >3 ];
+	   	  len=$arg|wc -c
+                  if [ ${len} >4 ];
                   then
                     hostip="$arg"
                   else
