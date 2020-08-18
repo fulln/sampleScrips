@@ -19,7 +19,13 @@ else
 	   echo arg: $index = $arg
 	   if [ $index  == 1 ];
 	   then		   
-	   	hostip="$hostip$1" 
+	   	  len=$arg|wc -L
+                  if [ ${len} >3 ];
+                  then
+                    hostip="$arg"
+                  else
+                    hostip="$hostip$arg"
+                  fi 
 	   elif [ $index == 2 ];
 	   then
 		username=$arg
