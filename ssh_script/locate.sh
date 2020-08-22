@@ -18,8 +18,14 @@ else
    do 
 	   echo arg: $index = $arg
 	   if [ $index  == 1 ];
-	   then		   
-	   	hostip="$hostip$1" 
+	   then	
+		len=$arg|wc -c      
+		if [ ${len} >4 ];
+		then 
+		  hostip="$arg"		
+		else
+	   	  hostip="$hostip$arg"
+		fi 
 	   elif [ $index == 2 ];
 	   then
 		username=$arg
@@ -29,7 +35,7 @@ else
 	   else [ $index == 4 ];
    		location=$arg	
      	   fi
-           let index += 1	   
+           let index+=1	   
    done    
    echo   
       	   
@@ -37,5 +43,5 @@ fi
 
 echo  $hostip $username $passwd $location
 
-expect login.exp $hostip $username $passwd $location
+expect /Users/fulln/opt/sampleScrips/ssh_script/login.exp $hostip $username $passwd $location
 

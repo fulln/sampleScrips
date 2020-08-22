@@ -10,7 +10,7 @@ exit 1
 set timeout 30
 spawn ssh $username@$ipaddress
 expect {
-        "(yes/no)" {send "yes\r"; exp_continue}
+        "(yes/no" {send "yes\r"; exp_continue}
         "password:" {send "$password\r"}
 }
 expect "$username@*"  {send "cd /app/applogs/$locations/\r"}
