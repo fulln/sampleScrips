@@ -2,8 +2,6 @@
 # -*- coding: utf-8 -*-
 
 from concurrent.futures import ThreadPoolExecutor
-from tqdm import tqdm
-
 import requests
 import threading
 import os
@@ -96,15 +94,13 @@ def getM3u8File(m3u8s, base_url, resName):
     getkey(base_url,key_path,path)
     if not os.path.exists(path):
         os.mkdir(path)
-    # 启动多线程写文件    
+    # 启动多线程写文件
     print('ts files lenth:\t', file_size)
     print('start downloading,please wait mins~')
     with ThreadPoolExecutor(40) as executor:
         for each in tss:
             executor.submit(Handler, base_url, each, path)
 
-    #get_pmgressbar(file_size,path)
-    
     # 等待所有线程下载完成
     main_thread = threading.current_thread()
     for t in threading.enumerate():
@@ -113,18 +109,8 @@ def getM3u8File(m3u8s, base_url, resName):
         t.join()
     time.sleep(1)
 
-    
     print(resName, " download complete")
 
-def get_pmgressbar(total,parentPath){    
-    with tqdm(total=total) as bar: # total表示预期的迭代次数        
-        time.sleep(2)#睡眠，可睡可不睡
-        command = r'ls -l %s | grep "^-" | wc -l'%(parentPath)
-        #指行命令
-        current = os.system(command)        
-        bar.set_postfix(num_found=current)#显示已找到目标值的数量
-        bar.set_description("下载中>>>")#添加描述
-}
     
 def download_file(text,context):
     '''
@@ -151,7 +137,9 @@ def prepare_parse(i):
     baseUrl = baseUrls[0].replace('https', 'http')
     names = re.findall(r'.*/(.*)\.m3u8', i, re.S)
     name = names[0]
-    print("m3u8Url\t", url)    
+    print("m3u8Url\t", url)
+    print("baseUrl\t", baseUrl)
+    print("name\t", name)
     return url,baseUrl,name
 
 def get_m3u8_file(url,name,parentPath):
@@ -182,12 +170,9 @@ def assemble_mp4(path,parentPath,resName):
         command = r'ffmpeg -i %s\%s.m3u8 %s' % (path,resName,videoPath)
         #指行命令
         os.system(command)
+        print(r"执行完成，视屏文件%s已经生成" % (videoPath))
         
 if __name__ == '__main__': 
-    seeds = [""]
-
-    if len(sys.argv) >0:
-        seeds = sys.argv
     # 准备工作：创建存放video文件夹
     parentPath = os.path.dirname(os.path.dirname(__file__))
 
@@ -197,8 +182,13 @@ if __name__ == '__main__':
     print('完整视频存放路径为:\t', videoPath)
     print('==============================================================')
     
-   
-    # 遍历所有的url地址
+    # 开始解析url，下载视频文件
+    # with open('seed3.txt') as seed:
+    #     seeds = seed.readlines()·
+    seeds =[]
+    if len(sys.argv) >0:
+        seeds=sys.argv
+        # 遍历所有的url地址
     
     for i in seeds:
         url,baseUrl,name=prepare_parse(i)
@@ -210,5 +200,6 @@ if __name__ == '__main__':
         getM3u8File(m3u8s, baseUrl, name)
         # 开始拼装成mp4
         assemble_mp4(parentPath + "/video/%s/" % name,parentPath,name)
-        print("parse video ok!!!") 
+
+    
 
