@@ -167,7 +167,9 @@ def assemble_mp4(path,parentPath,resName):
     else:
     #使用ffmpeg将ts合并为mp4
         # command = 'ffmpeg -i "concat:%s" -acodec copy -vcodec copy -absf aac_adtstoasc %s'%    (input_file,output_file)
-        command = r'ffmpeg -i %s\%s.m3u8 %s' % (path,resName,videoPath)
+         # command = 'ffmpeg -y -f concat -i %s -crf 18 -ar 48000 -vcodec libx264 -c:a aac -r 25 -g 25 -keyint_min 25 -strict -2 %s' % (concatfile, path)
+        command  = "ffmpeg -allowed_extensions ALL -protocol_whitelist \"file,http,crypto,tcp\" "
+        command += ' -y -i %s\%s.m3u8 -bsf:a aac_adtstoasc -c copy %s' % (path,resName,videoPath)
         #指行命令
         os.system(command)
         print(r"执行完成，视屏文件%s已经生成" % (videoPath))
