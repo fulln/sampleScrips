@@ -11,26 +11,26 @@ then
    echo "Usage: will be used default params"
    hostip="${hostip}24"
 else   
-while getopts ":ip:name:pass:pack:" arg
-do 
+while getopts ':i:n:p:k:' arg
+do
 	case $arg in
-		ip)
+		i)
 		len=$arg|wc -c      
 		if [ ${len} >4 ];
 		then 
-		  hostip="$arg"		
+		  hostip="$OPTARG"		
 		else
-	   	  hostip="$hostip$arg"
+	   	  hostip="$hostip$OPTARG"
 		fi 
 		;;
-		name)
-		username=$arg
+		n)
+		username=$OPTARG
 		;;
-		pass)
-		passwd=$arg
+		p)
+		passwd=$OPTARG
 		;;
-		pack)
-		location=$arg			
+		k)
+		location=$OPTARG			
 		;;	
 		?)
 			echo "未知参数"
@@ -41,13 +41,13 @@ fi
 
 case $location in
 	"trans")
-		location="es-cabinet-transfer"		
+		location="transfer"		
 	;;
 	"act")
-		location="fcbox-activity-core"
+		location="core"
 	;;
 	"op")
-		location="fcbox-oplatform-admin"
+		location="admin"
 	;;
 	?)
 	echo "未知参数"
