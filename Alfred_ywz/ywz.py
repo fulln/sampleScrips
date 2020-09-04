@@ -53,9 +53,7 @@ def get_detail(url):
     return informationlist    
 
 links = get_head_link(url)
-# load = []
 for filename in links:
-    # load.append(filename.replace("/",""))
     all_pages = []
     all_context = {}
     all_pages.extend(get_page_link(links[filename]))
