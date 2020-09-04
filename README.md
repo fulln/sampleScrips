@@ -23,7 +23,7 @@
 
 ## 分页helper
 
-[AbstractQueryHelper](./AbstractQueryHelper)
+[AbstractQueryHelper](./abstractExportHelper)
 
 ## ssh登录脚本
 
