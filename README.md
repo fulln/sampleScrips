@@ -6,10 +6,9 @@
 
 <!-- toc -->
 
-- [hlsVideoDownload](#hlsvideodownload)
-- [Alfred_ywz](#alfred_ywz)
-- [AbstractQueryHelper](#abstractqueryhelper)
-  * [使用步骤](#%E4%BD%BF%E7%94%A8%E6%AD%A5%E9%AA%A4)
+- [在线视频转下载](#%E5%9C%A8%E7%BA%BF%E8%A7%86%E9%A2%91%E8%BD%AC%E4%B8%8B%E8%BD%BD)
+- [颜文字的Alfred流](#%E9%A2%9C%E6%96%87%E5%AD%97%E7%9A%84alfred%E6%B5%81)
+- [分页helper](#%E5%88%86%E9%A1%B5helper)
 - [ssh登录脚本](#ssh%E7%99%BB%E5%BD%95%E8%84%9A%E6%9C%AC)
 
 <!-- tocstop -->
