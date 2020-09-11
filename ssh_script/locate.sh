@@ -40,14 +40,14 @@ done
 fi
 
 case $location in
-	"trans")
-		location="transfer"		
+	"")
+		location=""		
 	;;
-	"act")
-		location="core"
+	"")
+		location=""
 	;;
-	"op")
-		location="admin"
+	"")
+		location=""
 	;;
 	?)
 	echo "未知参数"

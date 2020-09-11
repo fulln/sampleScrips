@@ -14,4 +14,5 @@ expect {
         "password:" {send "$password\r"}
 }
 expect "$username@*"  {send "cd /app/applogs/$locations/\r"}
+expect "$username@*"  {send "ls\r"}
 interact

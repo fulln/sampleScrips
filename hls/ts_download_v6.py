@@ -184,14 +184,8 @@ if __name__ == '__main__':
     print('完整视频存放路径为:\t', videoPath)
     print('==============================================================')
     
-    # 开始解析url，下载视频文件
-    # with open('seed3.txt') as seed:
-    #     seeds = seed.readlines()·
-    seeds =[]
-    if len(sys.argv) >0:
-        seeds=sys.argv
-        # 遍历所有的url地址
-    
+    seeds =['']
+   
     for i in seeds:
         url,baseUrl,name=prepare_parse(i)
         #创建文件夹
