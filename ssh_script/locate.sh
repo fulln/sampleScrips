@@ -14,23 +14,23 @@ else
 while getopts ':i:n:p:k:' arg
 do
 	case $arg in
-		i)
-		len=$arg|wc -c      
-		if [ ${len} >4 ];
-		then 
-		  hostip="$OPTARG"		
-		else
-	   	  hostip="$hostip$OPTARG"
-		fi 
+		i)	
+			leng=`echo $OPTARG|wc -c`	
+			if [ ${leng} -gt 4 ];
+			then 
+		  		hostip="$OPTARG"		
+			else
+	   	 		hostip="$hostip$OPTARG"
+			fi 
 		;;
 		n)
-		username=$OPTARG
+			username=$OPTARG
 		;;
 		p)
-		passwd=$OPTARG
+			passwd=$OPTARG
 		;;
 		k)
-		location=$OPTARG			
+			location=$OPTARG			
 		;;	
 		?)
 			echo "未知参数"
@@ -40,13 +40,13 @@ done
 fi
 
 case $location in
-	"")
+	"trans")
 		location=""		
 	;;
-	"")
+	"act")
 		location=""
 	;;
-	"")
+	"op")
 		location=""
 	;;
 	?)
@@ -57,4 +57,3 @@ esac
 echo  $hostip $username $passwd $location 
 
 expect $PWD/login.exp $hostip $username $passwd $location
-
